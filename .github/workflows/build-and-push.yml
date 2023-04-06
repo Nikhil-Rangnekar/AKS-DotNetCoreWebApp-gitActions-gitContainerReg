@@ -15,14 +15,14 @@ jobs:
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '3.1'
+          dotnet-version: '6.0'
 
       - name: Build Docker image
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: ./GA-GCR-DCAPP/DCWebApp
           push: true
-          tags: docker.pkg.github.com/<username>/<repository>/<image-name>:<tag>
+          tags: docker.pkg.github.com/nikhil.rangnekar/aks-dotnetcorewebapp-gitactions-gitcontainerreg/img-dnc-ga-gc:latest
         env:
           DOCKER_BUILDKIT: 1
 
