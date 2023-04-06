@@ -11,7 +11,7 @@ COPY ["DCWebApp.csproj", ""]
 RUN dotnet restore "DCWebApp.csproj"
 COPY . .
 WORKDIR "/src"
-RUN dotnet build "DCWebApp/DCWebApp.csproj" -c Release -o /app/build
+RUN dotnet build "DCWebApp.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "DCWebApp.csproj" -c Release -o /app/publish /p:UseAppHost=false
