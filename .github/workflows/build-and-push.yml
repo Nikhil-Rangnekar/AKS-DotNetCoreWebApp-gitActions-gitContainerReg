@@ -30,7 +30,7 @@ jobs:
         with:
           registry: docker.pkg.github.com
           username: ${{ github.actor }}
-          password: ${{ secrets.GAGCSECRET }}
+          password: ${{ secrets.GITHUB_TOKEN  }}
           
       - name: Extract metadata (tags, labels) for Docker
         id: meta
