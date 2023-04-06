@@ -12,6 +12,10 @@ env:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -40,8 +44,6 @@ jobs:
           context: ./GA-GCR-DCAPP/DCWebApp
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-
-      
+          labels: ${{ steps.meta.outputs.labels }}    
           
           
