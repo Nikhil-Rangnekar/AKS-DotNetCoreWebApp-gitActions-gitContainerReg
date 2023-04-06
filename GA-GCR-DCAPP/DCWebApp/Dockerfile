@@ -8,7 +8,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 #COPY ["DCWebApp/DCWebApp.csproj", "DCWebApp/"]
 COPY ["DCWebApp.csproj", ""]
-RUN dotnet restore "DCWebApp/DCWebApp.csproj"
+RUN dotnet restore "DCWebApp.csproj"
 COPY . .
 WORKDIR "/src/DCWebApp"
 RUN dotnet build "DCWebApp.csproj" -c Release -o /app/build
