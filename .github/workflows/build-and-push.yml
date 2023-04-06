@@ -20,7 +20,7 @@ jobs:
       - name: Build Docker image
         uses: docker/build-push-action@v2
         with:
-          context: "../GA-GCR-DCAPP/DCWebApp"
+          context: ../GA-GCR-DCAPP/DCWebApp
           push: true
           tags: docker.pkg.github.com/nikhil.rangnekar/aks-dotnetcorewebapp-gitactions-gitcontainerreg/img-dnc-ga-gc:latest
         env:
